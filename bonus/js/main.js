@@ -36,6 +36,10 @@ const teams = [
 ];
 
 const teamContainer = document.querySelector('.team-container');
+const nameForm = document.getElementById('name');
+const roleForm = document.getElementById('role');
+const imageForm = document.getElementById('image');
+const addMemberButton = document.getElementById('addMemberButton');
 
 // for (let key in teams){
 //     console.log(teams[key]);
@@ -60,4 +64,11 @@ for (let i=0; i<teams.length; i++){
     `;
 }
 teamContainer.innerHTML += newCard;
+
+// estrapoliamo gli input dal form per creare una nuova card ed inserirla nell html
+addMemberButton.addEventListener('click',
+    function(){
+        console.log(nameForm);
+    }
+);
 
