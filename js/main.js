@@ -9,57 +9,60 @@ Ogni membro dovrà avere le informazioni necessarie per stampare la relativa car
 // costruiamo un array di obj con 5 elementi
 const teams = [
     {
-        'imgCard': 'img/wayne-barnett-founder-ceo.jpg', 
+        'imgCard': 'img/angela-caroll-chief-editor.jpg', 
         'nameCard': 'Angela Carrol',
         'roleCard': 'Chief Editor'
     },
     {
-        'imgCard': '', 
+        'imgCard': 'img/angela-lopez-social-media-manager.jpg', 
         'nameCard': 'Angela Lopez',
         'roleCard': 'Social Media Manager'
     },
     {
-        'imgCard': '', 
+        'imgCard': 'img/barbara-ramos-graphic-designer.jpg', 
         'nameCard': 'Barbara Ramos',
         'roleCard': 'Graphic Designer'
     },
     {
-        'imgCard': '', 
+        'imgCard': 'img/scott-estrada-developer.jpg', 
         'nameCard': 'Scott Estrada',
         'roleCard': 'Developer'
     },
     {
-        'imgCard': '', 
+        'imgCard': 'img/walter-gordon-office-manager.jpg', 
         'nameCard': 'Walter Gordon',
         'roleCard': 'Office Manager'
     }
 ];
 
-const teamCard = document.querySelector('.team-container');
-console.log(teams);
+const teamContainer = document.querySelector('.team-container');
+for (let key in teams){
+    console.log(teams[key]);
+}
+//console.log(teams[0].roleCard);
 
-const cardText = document.querySelector('.card-text');
-const cardTeamName = document.querySelector(cardText>'h3');
-const cardTeamRole = document.querySelector(cardText>'p');
+// const cardText = document.querySelector('.card-text');
+// const cardTeamName = document.querySelector(cardText>'h3');
+// const cardTeamRole = document.querySelector(cardText>'p');
 
 //console.log(cardText);
 
-// aggiungiamo una card all'inteno dell html
+// aggiungiamo tutte le card all'inteno dell html con un for sull array di ogj
 let newCard = '';
-
-newCard +=`
-    <div class="team-card">
-        <div class="card-image">
-            <img
-                src="img/wayne-barnett-founder-ceo.jpg"
-                alt="Wayne Barnett"
-        />
+for (let i=0; i<teams.length; i++){
+    newCard +=`
+        <div class="team-card">
+            <div class="card-image">
+                <img
+                    src="${teams[i].imgCard}"
+                    alt="${teams[i].nameCard}"
+            />
+            </div>
+            <div class="card-text">
+                <h3>${teams[i].nameCard}</h3>
+                <p>${teams[i].roleCard}</p>
+            </div>
         </div>
-        <div class="card-text">
-            <h3>Wayne Barnett</h3>
-            <p>Founder & CEO</p>
-        </div>
-    </div>
-`;
-
-teamCard.innerHTML += newCard;
+    `;
+}
+teamContainer.innerHTML += newCard;
