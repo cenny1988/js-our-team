@@ -36,16 +36,10 @@ const teams = [
 ];
 
 const teamContainer = document.querySelector('.team-container');
-for (let key in teams){
-    console.log(teams[key]);
-}
-//console.log(teams[0].roleCard);
 
-// const cardText = document.querySelector('.card-text');
-// const cardTeamName = document.querySelector(cardText>'h3');
-// const cardTeamRole = document.querySelector(cardText>'p');
-
-//console.log(cardText);
+// for (let key in teams){
+//     console.log(teams[key]);
+// }
 
 // aggiungiamo tutte le card all'inteno dell html con un for sull array di ogj
 let newCard = '';
@@ -66,3 +60,4 @@ for (let i=0; i<teams.length; i++){
     `;
 }
 teamContainer.innerHTML += newCard;
+
