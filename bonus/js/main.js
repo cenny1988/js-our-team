@@ -74,9 +74,9 @@ addMemberButton.addEventListener('click',
 
         
         // stampa in console l'array di obj
-        for (let key in teams){
-            console.log(teams[key]);
-        }
+        // for (let key in teams){
+        //     console.log(teams[key]);
+        // }
     
         return newItem
     }
