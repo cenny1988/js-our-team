@@ -41,10 +41,6 @@ const roleForm = document.getElementById('role');
 const imageForm = document.getElementById('image');
 const addMemberButton = document.getElementById('addMemberButton');
 
-// for (let key in teams){
-//     console.log(teams[key]);
-// }
-
 // aggiungiamo tutte le card all'inteno dell html con un for sull array di ogj
 let newCard = '';
 for (let i=0; i<teams.length; i++){
@@ -68,7 +64,17 @@ teamContainer.innerHTML += newCard;
 // estrapoliamo gli input dal form per creare una nuova card ed inserirla nell html
 addMemberButton.addEventListener('click',
     function(){
-        console.log(nameForm);
+        let newObj = {
+            'imgCard' : imageForm.value,
+            'nameCard' : nameForm.value,
+            'roleCard' : roleForm.value 
+        };
+        teams.push(newObj);
+        
+        // stampa in console l'array di obj
+        for (let key in teams){
+            console.log(teams[key]);
+        }
     }
 );
 
